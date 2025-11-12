@@ -100,14 +100,15 @@ const projects = [
     githubUrl: "https://github.com/kavishka286/Online_banking_system",
   },
   {
-    title: "Fire Detection System",
-    category: "Safety System",
+    title: "EVCS Booking Platform",
+    category: "Booking Platform",
     description:
-      "Advanced fire detection and monitoring system using OSGI framework for real-time safety alerts and emergency response management.",
-    image: "/images/fire-detection-system.png",
-    icon: AlertTriangle,
-    iconBg: "bg-red-600",
-    tags: ["OSGI", "Java"],
+      "Mobile and web application for booking electric vehicle charging stations with real-time availability and reservation management.",
+    image: "/images/car.jpg",
+    icon: Globe,
+    iconBg: "bg-blue-500",
+    tags: ["React", "C#", "Kotlin", "MongoDB"],
+    githubUrl: "https://github.com/DinuthRashmika/Evcs-booking-platform",
   },
 ]
 
