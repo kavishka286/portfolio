@@ -5,7 +5,7 @@ import { ArrowRight, Download, Code } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 // Put the PDF in your project's /public folder with this exact filename:
-const CV_PUBLIC_PATH = "/KavishkaSenavirathna_FullStack_Resume.pdf"
+const CV_PUBLIC_PATH = "/KavishkaSenavirathna_FullStackEngineer.pdf"
 
 export function Hero() {
   const [isVisible, setIsVisible] = useState(false)
