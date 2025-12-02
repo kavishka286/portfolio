@@ -44,7 +44,7 @@ export function About() {
             {/* Left Column - Personal Info */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-3xl font-bold text-white mb-6">I'm Kavishka Senavirathna</h3>
+                <h3 className="text-3xl font-bold text-white mb-6">Hi, I'm Kavishka Senavirathna</h3>
 
                 <div className="space-y-6 text-gray-300 leading-relaxed">
                   <p>
