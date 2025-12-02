@@ -20,14 +20,31 @@ export function Hero() {
     }
   }
 
-  const downloadCV = () => {
+  // Improved download: fetch file and create a blob URL to force download and surface errors
+  const downloadCV = async () => {
     const url = "/Kavishka-Senavirathna-CV.pdf"
-    const a = document.createElement("a")
-    a.href = url
-    a.download = "Kavishka-Senavirathna-CV.pdf"
-    document.body.appendChild(a)
-    a.click()
-    a.remove()
+    try {
+      const res = await fetch(url)
+      if (!res.ok) {
+        // File not found or server error
+        alert("CV not found. Make sure the file is in the public folder and the filename matches exactly.")
+        console.error("CV download failed:", res.status, res.statusText)
+        return
+      }
+
+      const blob = await res.blob()
+      const blobUrl = URL.createObjectURL(blob)
+      const a = document.createElement("a")
+      a.href = blobUrl
+      a.download = "Kavishka-Senavirathna-CV.pdf"
+      document.body.appendChild(a)
+      a.click()
+      a.remove()
+      URL.revokeObjectURL(blobUrl)
+    } catch (err) {
+      console.error("Error downloading CV:", err)
+      alert("Failed to download CV. See console for details.")
+    }
   }
 
   return (
