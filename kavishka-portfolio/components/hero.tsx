@@ -4,6 +4,8 @@ import { useEffect, useState } from "react"
 import { ArrowRight, Download, Code } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
+// NOTE: Put your CV file at: public/Kavishka-Senavirathna-CV.pdf
+
 export function Hero() {
   const [isVisible, setIsVisible] = useState(false)
 
@@ -16,6 +18,16 @@ export function Hero() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
     }
+  }
+
+  const downloadCV = () => {
+    const url = "/Kavishka-Senavirathna-CV.pdf"
+    const a = document.createElement("a")
+    a.href = url
+    a.download = "Kavishka-Senavirathna-CV.pdf"
+    document.body.appendChild(a)
+    a.click()
+    a.remove()
   }
 
   return (
@@ -84,8 +96,10 @@ export function Hero() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button
+                type="button"
+                onClick={downloadCV}
                 variant="outline"
-                className="border-gray-600 text-gray-300 hover:bg-gray-800 px-8 py-3 rounded-lg font-medium transition-all duration-300 bg-transparent"
+                className="border-gray-600 text-gray-300 hover:bg-gray-800 px-8 py-3 rounded-lg font-medium transition-all duration-300 bg-transparent flex items-center"
               >
                 <Download className="mr-2 h-5 w-5" />
                 Download CV
